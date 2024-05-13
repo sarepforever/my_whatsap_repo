@@ -21,12 +21,16 @@ const flowPrincipal = addKeyword(EVENTS.WELCOME)
         }
      //console.log(JSON.stringify(ctx))
      const url=`${UrlFrom}api/Chat/receiveMessage`;
-     await axios.post(url,data).then(response=>{
-        //console.log(response)
+     await axios.post(url,data)
+     .then(response=>{
+        
+     })
+     .catch(function (error) {
+        console.log(error);
      });
      
     }catch (err){
-       // console.log(err)
+       console.log(err)
     }
 })
 const main = async () => {
@@ -61,9 +65,9 @@ const main = async () => {
         })
 
         QRPortalWeb()
-    }catch{
-
-    }
+    }catch (err){
+        console.log(err)
+     }
 }
 
 main()
